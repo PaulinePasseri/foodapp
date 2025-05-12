@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   title: {
-    fontSize: width * 0.2,
+    fontSize: Math.min(width * 0.15, 60),
     color: "#fff",
     fontWeight: 700,
     textAlign: "center",
