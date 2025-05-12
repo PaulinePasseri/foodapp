@@ -1,7 +1,17 @@
-import { StyleSheet, Text, View, Image, Pressable } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  Pressable,
+  Dimensions,
+  StatusBar
+} from "react-native";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 
-export default function HomeScreen({navigation}) {
+const { height, width } = Dimensions.get("window");
+
+export default function HomeScreen({ navigation }) {
   return (
     <View style={styles.container}>
       <View style={styles.imageContainer}>
@@ -12,11 +22,19 @@ export default function HomeScreen({navigation}) {
       </View>
       <View style={styles.textContainer}>
         <Text style={styles.title}>FoodApp</Text>
-        <Pressable style={styles.button} onPress={() => navigation.navigate('DrawerNavigator')} hitSlop={20}>
-          <Text style={styles.buttonText}>Let's go!  </Text>
-          <FontAwesome name={'arrow-right'} size={20} color={'#fff'} />
-        </Pressable> 
+        <Pressable
+          style={styles.button}
+          onPress={() => navigation.navigate("DrawerNavigator")}
+          hitSlop={20}
+        >
+          <Text style={styles.buttonText}>Let's go! </Text>
+          <FontAwesome name={"arrow-right"} size={20} color={"#fff"} />
+        </Pressable>
       </View>
+      <StatusBar
+        barStyle="dark-content"
+        backgroundColor="#fff"
+      />
     </View>
   );
 }
@@ -27,9 +45,9 @@ const styles = StyleSheet.create({
     backgroundColor: "#6D5D89",
   },
   imageContainer: {
-    height: '75%',
-    borderBottomLeftRadius: '15%',
-    overflow: 'hidden',
+    height: height * 0.8,
+    borderBottomLeftRadius: 100,
+    overflow: "hidden",
   },
   homeImage: {
     height: "100%",
@@ -39,20 +57,20 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   title: {
-    fontSize: 70,
-    color: '#fff',
+    fontSize: width * 0.2,
+    color: "#fff",
     fontWeight: 700,
-    textAlign: 'center'
+    textAlign: "center",
   },
   button: {
-    flexDirection: 'row', 
-    alignItems: 'center',
-    justifyContent: 'flex-end',
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "flex-end",
     marginTop: 10,
-    marginRight: 40
+    marginRight: 40,
   },
   buttonText: {
-    color: '#fff',
-    fontSize: 20
-  }
+    color: "#fff",
+    fontSize: 20,
+  },
 });

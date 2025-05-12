@@ -13,7 +13,8 @@
     "preset": "jest-expo",
     "transformIgnorePatterns": [
       "node_modules/(?!((jest-)?react-native|@react-native(-community)?|react-redux|expo(nent)?|@expo(nent)?/.*|@expo-google-fonts/.*|react-navigation|@react-navigation/.*|@unimodules/.*|unimodules|sentry-expo|native-base|react-native-svg))"
-    ]},
+    ]
+  },
   "dependencies": {
     "@react-native-async-storage/async-storage": "2.1.2",
     "@react-navigation/bottom-tabs": "6",
@@ -23,6 +24,7 @@
     "@reduxjs/toolkit": "^2.8.1",
     "expo": "^53",
     "expo-status-bar": "~2.2.2",
+    "expo-updates": "~0.28.12",
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "react-native": "0.79.1",
