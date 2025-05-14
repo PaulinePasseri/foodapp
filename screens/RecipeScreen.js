@@ -55,9 +55,10 @@ export default function RecipeScreen() {
           backgroundColor: currentRecipe.color,
           height: "35%",
           width: "100%",
-          padding: 20,
+          paddingHorizontal: 20,
           borderBottomLeftRadius: 100,
           zIndex: 2,
+          paddingVertical: 30
         }}
       >
         <Pressable onPress={() => navigation.goBack()} hitSlop={20}>
@@ -86,7 +87,7 @@ export default function RecipeScreen() {
         <View style={styles.iconsContainer}>
           <View>
             <FontAwesome5
-              name="star"
+              name="sort-amount-up-alt"
               size={20}
               color={currentRecipe.color}
               style={{ textAlign: "center" }}
@@ -99,6 +100,7 @@ export default function RecipeScreen() {
               size={20}
               color={currentRecipe.color}
               style={{ textAlign: "center" }}
+              solid
             />
             <Text style={styles.icon}>{currentRecipe.time}</Text>
           </View>
@@ -108,10 +110,12 @@ export default function RecipeScreen() {
               size={20}
               color={currentRecipe.color}
               style={{ textAlign: "center" }}
+              solid
             />
             <Text style={styles.icon}>{currentRecipe.rating}</Text>
           </View>
         </View>
+        <ScrollView style={styles.scroll} showsVerticalScrollIndicator={false}>
         <Text style={styles.name}>{currentRecipe.name}</Text>
         <Text>{currentRecipe.longDesc}</Text>
         <View style={styles.ingredientsContainer}>
@@ -129,7 +133,7 @@ export default function RecipeScreen() {
             </Pressable>
           </View>
         </View>
-        <ScrollView style={styles.scroll} showsVerticalScrollIndicator={false}>
+        
           {currentRecipe.ingredients.map((data, index) => {
             return (
               <View key={index} style={styles.ingredient}>
@@ -220,7 +224,7 @@ const styles = StyleSheet.create({
   },
   scroll: {
     marginTop: 15,
-    maxHeight: "50%",
+    maxHeight: "75%",
   },
   bookmark: {
     color: "#fff",
