@@ -223,7 +223,7 @@ const styles = StyleSheet.create({
     color: "grey",
   },
   scroll: {
-    marginTop: 15,
+    marginTop: 5,
     maxHeight: "75%",
   },
   bookmark: {
